@@ -1,0 +1,27 @@
+ 1001  brew update && brew install azure-cli
+ 1002  az version
+ 1003  az extension add -n ml -y
+ 1004  az login
+ 1005  az account set --subscription xxxxxxxxxxxxxxxxxxxxx
+ 1006  az group create --name aml-dev-rg --location eastus2
+ 1007  az ml workspace create -n aml-ws -g aml-dev-rg -l eastus2
+ 
+
+ . You will need to remove old extensions if they are installed for your CLI to work properly. You
+can remove the old ml extensions by running the following commands:
+az extension remove -n azure-cli-ml
+az extension remove -n ml
+. To install the ml extension, run the following command:
+az extension add -n ml -y
+. Now, let’s connect to your subscription in Azure through the Azure CLI by running the following
+command here, replacing xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx with the
+Subscription ID information you found in Figure 1.5:
+az login
+az account set --subscription xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx
+. Create a resource group by running the following command. Please note that rg_name is an
+example name for the resource group, just as aml-ws is an example name for an AML workspace:
+az group create --name aml-dev-rg --location eastus2
+. Create an AML workspace by running the following command, noting that eastus2 is the
+Azure region in which we will deploy this AML workspace:
+az ml workspace create -n aml-ws -g aml-dev-rg -l eastus2
+You have now created an AMLS workspace with the Azure CLI ml extension
