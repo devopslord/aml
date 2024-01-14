@@ -1,0 +1,9 @@
+brew update && brew install azure-cli
+
+  az version
+  az extension add -n ml -y
+  az login
+  az account set --subscription xxxxxxxxxxxxxxxxxxxxx
+  az group create --name aml-dev-rg --location eastus2
+  az ml workspace create -n aml-ws -g aml-dev-rg -l eastus2
+ 
