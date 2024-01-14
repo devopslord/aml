@@ -34,3 +34,11 @@ az deployment group create --name "exampledeployment"
 json" --parameters name="uniquename" environment="dev"
 location="eastus2"
 It will take a few minutes for the workspace to be created.
+
+
+Create a compute
+az ml compute create --name computeinstance01 --size STANDARD_
+D3_V2 --type ComputeInstance--resource-group aml-dev-rg
+--workspace-name aml-ws
+
+az ml compute create --name amlcomputeinstance01 --size STANDARD_D3_V2 --type ComputeInstance --resource-group aml-dev-rg --workspace-name aml-ws
